@@ -1,20 +1,24 @@
+import React from "react";
+import ReactDOM from 'react-dom/client';
 
-    const parent = React.createElement('div', {id: 'parent'},
-                   [React.createElement('div', {id: 'child1'},
-                   [React.createElement('h1', {}, "I am h1 tag"), React.createElement('h2', {}, "I am h2 tag")]
-                    ),
-                    React.createElement('div', {id: 'child2'},
-                   [React.createElement('h1', {}, "I am h1 tag"), React.createElement('h2', {}, "I am h2 tag")]
-                    )
-                   ]
-                   );
-
-
-
-/*const heading = React.createElement("h1", {id: 'heading', xyz: 'xyz'}, "Hello World from React!");*/
-
-console.log(parent);
+const heading =  React.createElement("h1",{id:'heading'}, "Namaste React 🚀");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(parent);
+root.render(heading);
+
+//JSX => Using Babel transpiles to React.createElement(It is a react object) => Using render convert it tohtml element and replaced it to the DOM
+
+const jsxheading = (<h1 className="head" tabIndex="5">
+                    Namaste React using JSX 🚀
+                   </h1>);
+
+//React functional Component
+
+const HeadingComponent = () => {
+    return <h1>Namaste react functional Component</h1>
+}
+console.log(jsxheading);
+
+root.render(jsxheading);
+
